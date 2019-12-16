@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">5</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -193,6 +193,307 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/16/Uber%E9%A3%8E%E6%A0%BCGo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lacdon Lang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LACDON">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/16/Uber%E9%A3%8E%E6%A0%BCGo/" class="post-title-link" itemprop="url">Uber风格Go</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-16 17:19:34 / Modified: 17:20:35" itemprop="dateCreated datePublished" datetime="2019-12-16T17:19:34+08:00">2019-12-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!--
+
+Editing this document:
+
+- Discuss all changes in GitHub issues first.
+- Update the table of contents as new sections are added or removed.
+- Use tables for side-by-side code samples. See below.
+
+Code Samples:
+
+Use 2 spaces to indent. Horizontal real estate is important in side-by-side
+samples.
+
+For side-by-side code samples, use the following snippet.
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Bad&lt;&#x2F;th&gt;&lt;th&gt;Good&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;</span><br><span class="line">&lt;tbody&gt;</span><br><span class="line">&lt;tr&gt;&lt;td&gt;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;go</span><br><span class="line">BAD CODE GOES HERE</span><br><span class="line">&#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;td&gt;&lt;td&gt;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;go</span><br><span class="line">GOOD CODE GOES HERE</span><br><span class="line">&#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(You need the empty lines between the <td> and code samples for it to be<br>treated as Markdown.)</p>
+<p>If you need to add labels or descriptions below the code samples, add another<br>row before the </tbody></table> line.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;DESCRIBE BAD CODE&lt;&#x2F;td&gt;</span><br><span class="line">&lt;td&gt;DESCRIBE GOOD CODE&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br></pre></td></tr></table></figure>
+
+<p>–&gt;</p>
+<h1 id="uber-go-guide-的中文翻译"><a href="#uber-go-guide-的中文翻译" class="headerlink" title="uber-go/guide 的中文翻译"></a><a href="https://github.com/uber-go/guide" target="_blank" rel="noopener">uber-go/guide</a> 的中文翻译</h1><h1 id="English"><a href="#English" class="headerlink" title="English"></a><a href="https://github.com/uber-go/guide/blob/master/style.md" target="_blank" rel="noopener">English</a></h1><h1 id="Uber-Go-语言编码规范"><a href="#Uber-Go-语言编码规范" class="headerlink" title="Uber Go 语言编码规范"></a>Uber Go 语言编码规范</h1><p> <a href="https://www.uber.com/" target="_blank" rel="noopener">Uber</a> 是一家美国硅谷的科技公司，也是 Go 语言的早期 adopter。其开源了很多 golang 项目，诸如被 Gopher 圈熟知的 <a href="https://github.com/uber-go/zap" target="_blank" rel="noopener">zap</a>、<a href="https://github.com/jaegertracing/jaeger" target="_blank" rel="noopener">jaeger</a> 等。2018 年年末 Uber 将内部的 <a href="https://github.com/uber-go/guide" target="_blank" rel="noopener">Go 风格规范</a> 开源到 GitHub，经过一年的积累和更新，该规范已经初具规模，并受到广大 Gopher 的关注。本文是该规范的中文版本。本版本会根据原版实时更新。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><ul>
+<li>当前更新版本：2019-12-04 版本地址：<a href="https://github.com/uber-go/guide/commit/33388e21572876d9bda25895db48a1da9b0304f5" target="_blank" rel="noopener">commit:#73</a></li>
+<li>如果您发现任何更新、问题或改进，请随时 fork 和 PR</li>
+<li>Please feel free to fork and PR if you find any updates, issues or improvement.</li>
+</ul>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#指导原则">指导原则</a><ul>
+<li><a href="#指向-interface-的指针">指向 interface 的指针</a></li>
+<li><a href="#接收器-receiver-与接口">接收器 (receiver) 与接口</a></li>
+<li><a href="#零值-Mutex-是有效的">零值 Mutex 是有效的</a></li>
+<li><a href="#在边界处拷贝-Slices-和-Maps">在边界处拷贝 Slices 和 Maps</a></li>
+<li><a href="#使用-defer-释放资源">使用 defer 释放资源</a></li>
+<li><a href="#Channel-的-size-要么是-1要么是无缓冲的">Channel 的 size 要么是 1，要么是无缓冲的</a></li>
+<li><a href="#枚举从-1-开始">枚举从 1 开始</a></li>
+<li><a href="#错误类型">错误类型</a></li>
+<li><a href="#错误包装-(Error-Wrapping)">错误包装 (Error Wrapping)</a></li>
+<li><a href="#处理类型断言失败">处理类型断言失败</a></li>
+<li><a href="#不要-panic">不要 panic</a></li>
+<li><a href="#使用-gouberorgatomic">使用 go.uber.org/atomic</a></li>
+<li><a href="#避免可变全局变量">避免可变全局变量</a></li>
+</ul>
+</li>
+<li><a href="#性能">性能</a><ul>
+<li><a href="#优先使用-strconv-而不是-fmt">优先使用 strconv 而不是 fmt</a></li>
+<li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
+<li><a href="#尽量初始化时指定-Map-容量">尽量初始化时指定 Map 容量</a></li>
+</ul>
+</li>
+<li><a href="#规范">规范</a><ul>
+<li><a href="#一致性">一致性</a></li>
+<li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
+<li><a href="#import-分组">import 分组</a></li>
+<li><a href="#包名">包名</a></li>
+<li><a href="#函数名">函数名</a></li>
+<li><a href="#导入别名">导入别名</a></li>
+<li><a href="#函数分组与顺序">函数分组与顺序</a></li>
+<li><a href="#减少嵌套">减少嵌套</a></li>
+<li><a href="#不必要的-else">不必要的 else</a></li>
+<li><a href="#顶层变量声明">顶层变量声明</a></li>
+<li><a href="#对于未导出的顶层常量和变量使用_作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
+<li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
+<li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
+<li><a href="#本地变量声明">本地变量声明</a></li>
+<li><a href="#nil-是一个有效的-slice">nil 是一个有效的 slice</a></li>
+<li><a href="#小变量作用域">小变量作用域</a></li>
+<li><a href="#避免参数语义不明确Avoid-Naked-Parameters">避免参数语义不明确（Avoid Naked Parameters）</a></li>
+<li><a href="#使用原始字符串字面值避免转义">使用原始字符串字面值，避免转义</a></li>
+<li><a href="#初始化-Struct-引用">初始化 Struct 引用</a></li>
+<li><a href="#初始化-maps">初始化 Maps</a></li>
+<li><a href="#字符串-string-format">字符串 string format </a></li>
+<li><a href="#命名-Printf-样式的函数">命名 Printf 样式的函数</a></li>
+</ul>
+</li>
+<li><a href="#编程模式">编程模式</a><ul>
+<li><a href="#表驱动测试">表驱动测试</a></li>
+<li><a href="#功能选项">功能选项</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>样式 (style) 是支配我们代码的惯例。术语<code>样式</code>有点用词不当，因为这些约定涵盖的范围不限于由 gofmt 替我们处理的源文件格式。</p>
+<p>本指南的目的是通过详细描述在 Uber 编写 Go 代码的注意事项来管理这种复杂性。这些规则的存在是为了使代码库易于管理，同时仍然允许工程师更有效地使用 Go 语言功能。</p>
+<p>该指南最初由 <a href="https://github.com/prashantv" target="_blank" rel="noopener">Prashant Varanasi</a> 和 <a href="https://github.com/nomis52" target="_blank" rel="noopener">Simon Newton</a> 编写，目的是使一些同事能快速使用 Go。多年来，该指南已根据其他人的反馈进行了修改。</p>
+<p>本文档记录了我们在 Uber 遵循的 Go 代码中的惯用约定。其中许多是 Go 的通用准则，而其他扩展准则依赖于下面外部的指南：</p>
+<ol>
+<li><a href="https://golang.org/doc/effective_go.html" target="_blank" rel="noopener">Effective Go</a></li>
+<li><a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener">The Go common mistakes guide</a></li>
+</ol>
+<p>所有代码都应该通过<code>golint</code>和<code>go vet</code>的检查并无错误。我们建议您将编辑器设置为：</p>
+<ul>
+<li>保存时运行 <code>goimports</code></li>
+<li>运行 <code>golint</code> 和 <code>go vet</code> 检查错误</li>
+</ul>
+<p>您可以在以下 Go 编辑器工具支持页面中找到更为详细的信息：<br><a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins" target="_blank" rel="noopener">https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins</a></p>
+<h2 id="指导原则"><a href="#指导原则" class="headerlink" title="指导原则"></a>指导原则</h2><h3 id="指向-interface-的指针"><a href="#指向-interface-的指针" class="headerlink" title="指向 interface 的指针"></a>指向 interface 的指针</h3><p>您几乎不需要指向接口类型的指针。您应该将接口作为值进行传递，在这样的传递过程中，实质上传递的底层数据仍然可以是指针。</p>
+<p>接口实质上在底层用两个字段表示：</p>
+<ol>
+<li>一个指向某些特定类型信息的指针。您可以将其视为”type”。</li>
+<li>数据指针。如果存储的数据是指针，则直接存储。如果存储的数据是一个值，则存储指向该值的指针。</li>
+</ol>
+<p>如果希望接口方法修改基础数据，则必须使用指针传递。</p>
+<h3 id="接收器-receiver-与接口"><a href="#接收器-receiver-与接口" class="headerlink" title="接收器 (receiver) 与接口"></a>接收器 (receiver) 与接口</h3><p>使用值接收器的方法既可以通过值调用，也可以通过指针调用。</p>
+<p>例如，</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> S <span class="keyword">struct</span> &#123;</span><br><span class="line">  data <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s S)</span> <span class="title">Read</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> s.data</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *S)</span> <span class="title">Write</span><span class="params">(str <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">  s.data = str</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sVals := <span class="keyword">map</span>[<span class="keyword">int</span>]S&#123;<span class="number">1</span>: &#123;<span class="string">"A"</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 你只能通过值调用 Read</span></span><br><span class="line">sVals[<span class="number">1</span>].Read()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这不能编译通过：</span></span><br><span class="line"><span class="comment">//  sVals[1].Write("test")</span></span><br><span class="line"></span><br><span class="line">sPtrs := <span class="keyword">map</span>[<span class="keyword">int</span>]*S&#123;<span class="number">1</span>: &#123;<span class="string">"A"</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过指针既可以调用 Read，也可以调用 Write 方法</span></span><br><span class="line">sPtrs[<span class="number">1</span>].Read()</span><br><span class="line">sPtrs[<span class="number">1</span>].Write(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>同样，即使该方法具有值接收器，也可以通过指针来满足接口。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> F <span class="keyword">interface</span> &#123;</span><br><span class="line">  f()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> S1 <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s S1)</span> <span class="title">f</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> S2 <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *S2)</span> <span class="title">f</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">s1Val := S1&#123;&#125;</span><br><span class="line">s1Ptr := &amp;S1&#123;&#125;</span><br><span class="line">s2Val := S2&#123;&#125;</span><br><span class="line">s2Ptr := &amp;S2&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i F</span><br><span class="line">i = s1Val</span><br><span class="line">i = s1Ptr</span><br><span class="line">i = s2Ptr</span><br><span class="line"></span><br><span class="line"><span class="comment">//  下面代码无法通过编译。因为 s2Val 是一个值，而 S2 的 f 方法中没有使用值接收器</span></span><br><span class="line"><span class="comment">//   i = s2Val</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://golang.org/doc/effective_go.html" target="_blank" rel="noopener">Effective Go</a> 中有一段关于 <a href="https://golang.org/doc/effective_go.html#pointers_vs_values" target="_blank" rel="noopener">pointers vs. values</a> 的精彩讲解。</p>
+<h3 id="零值-Mutex-是有效的"><a href="#零值-Mutex-是有效的" class="headerlink" title="零值 Mutex 是有效的"></a>零值 Mutex 是有效的</h3><p>零值 <code>sync.Mutex</code> 和 <code>sync.RWMutex</code> 是有效的。所以指向 mutex 的指针基本是不必要的。</p>
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mu := <span class="built_in">new</span>(sync.Mutex)</span><br><span class="line">mu.Lock()</span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mu sync.Mutex</span><br><span class="line">mu.Lock()</span><br></pre></td></tr></table></figure>
+
+</td></tr>
+</tbody></table>
+
+<p>如果你使用结构体指针，mutex 可以非指针形式作为结构体的组成字段，或者更好的方式是直接嵌入到结构体中。<br>如果是私有结构体类型或是要实现 Mutex 接口的类型，我们可以使用嵌入 mutex 的方法：</p>
+<table>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> smap <span class="keyword">struct</span> &#123;</span><br><span class="line">  sync.Mutex <span class="comment">// only for unexported types（仅适用于非导出类型）</span></span><br><span class="line"></span><br><span class="line">  data <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newSMap</span><span class="params">()</span> *<span class="title">smap</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &amp;smap&#123;</span><br><span class="line">    data: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *smap)</span> <span class="title">Get</span><span class="params">(k <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">  m.Lock()</span><br><span class="line">  <span class="keyword">defer</span> m.Unlock()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> m.data[k]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> SMap <span class="keyword">struct</span> &#123;</span><br><span class="line">  mu sync.Mutex <span class="comment">// 对于导出类型，请使用私有锁</span></span><br><span class="line"></span><br><span class="line">  data <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewSMap</span><span class="params">()</span> *<span class="title">SMap</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &amp;SMap&#123;</span><br><span class="line">    data: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *SMap)</span> <span class="title">Get</span><span class="params">(k <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">  m.mu.Lock()</span><br><span class="line">  <span class="keyword">defer</span> m.mu.Unlock()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> m.data[k]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</td></tr>
+
+</tr>
+<tr>
+<td>为私有类型或需要实现互斥接口的类型嵌入。</td>
+<td>对于导出的类型，请使用专用字段。</td>
+</tr>
+
+</tbody></table>
+
+<h3 id="在边界处拷贝-Slices-和-Maps"><a href="#在边界处拷贝-Slices-和-Maps" class="headerlink" title="在边界处拷贝 Slices 和 Maps"></a>在边界处拷贝 Slices 和 Maps</h3><p>slices 和 maps 包含了指向底层数据的指针，因此在需要复制它们时要特别注意。</p>
+<h4 id="接收-Slices-和-Maps"><a href="#接收-Slices-和-Maps" class="headerlink" title="接收 Slices 和 Maps"></a>接收 Slices 和 Maps</h4><p>请记住，当 map 或 slice 作为函数参数传入时，如果您存储了对它们的引用，则用户可以对其进行修改。</p>
+<table>
+<thead><tr><th>Bad</th> <th>Good</th></tr></thead>
+<tbody>
+<tr>
+<td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *Driver)</span> <span class="title">SetTrips</span><span class="params">(trips []Trip)</span></span> &#123;</span><br><span class="line">  d.trips = trips</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">trips := ...</span><br><span class="line">d1.SetTrips(trips)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 你是要修改 d1.trips 吗？</span></span><br><span class="line">trips[<span class="number">0</span>] = ...</span><br></pre></td></tr></table></figure>
+
+</td>
+<td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *Driver)</span> <span class="title">SetTrips</span><span class="params">(trips []Trip)</span></span> &#123;</span><br><span class="line">  d.trips = <span class="built_in">make</span>([]Trip, <span class="built_in">len</span>(trips))</span><br><span class="line">  <span class="built_in">copy</span>(d.trips, trips)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">trips := ...</span><br><span class="line">d1.SetTrips(trips)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里我们修改 trips[0]，但不会影响到 d1.trips</span></span><br><span class="line">trips[<span class="number">0</span>] = ...</span><br></pre></td></tr></table></figure>
+
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<h4 id="返回-slices-或-maps"><a href="#返回-slices-或-maps" class="headerlink" title="返回 slices 或 maps"></a>返回 slices 或 maps</h4><p>同样，请注意用户对暴露内部状态的 map 或 slice 的修改。</p>
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Stats <span class="keyword">struct</span> &#123;</span><br><span class="line">  mu sync.Mutex</span><br><span class="line"></span><br><span class="line">  counters <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Snapshot 返回当前状态。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Stats)</span> <span class="title">Snapshot</span><span class="params">()</span> <span class="title">map</span>[<span class="title">string</span>]<span class="title">int</span></span> &#123;</span><br><span class="line">  s.mu.Lock()</span><br><span class="line">  <span class="keyword">defer</span> s.mu.Unlock()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> s.counters</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// snapshot 不再受互斥锁保护</span></span><br><span class="line"><span class="comment">// 因此对 snapshot 的任何访问都将受到数据竞争的影响</span></span><br><span class="line"><span class="comment">// 影响 stats.counters</span></span><br><span class="line">snapshot := stats.Snapshot()</span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Stats <span class="keyword">struct</span> &#123;</span><br><span class="line">  mu sync.Mutex</span><br><span class="line"></span><br><span class="line">  counters <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Stats)</span> <span class="title">Snapshot</span><span class="params">()</span> <span class="title">map</span>[<span class="title">string</span>]<span class="title">int</span></span> &#123;</span><br><span class="line">  s.mu.Lock()</span><br><span class="line">  <span class="keyword">defer</span> s.mu.Unlock()</span><br><span class="line"></span><br><span class="line">  result := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>, <span class="built_in">len</span>(s.counters))</span><br><span class="line">  <span class="keyword">for</span> k, v := <span class="keyword">range</span> s.counters &#123;</span><br><span class="line">    result[k] = v</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// snapshot 现在是一个拷贝</span></span><br><span class="line">snapshot := stats.Snapshot()</span><br></pre></td></tr></table></figure>
+
+</td></tr>
+</tbody></table>
+
+<h3 id="使用-defer-释放资源"><a href="#使用-defer-释放资源" class="headerlink" title="使用 defer 释放资源"></a>使用 defer 释放资源</h3><p>使用 defer 释放资源，诸如文件和锁。</p>
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">p.Lock()</span><br><span class="line"><span class="keyword">if</span> p.count &lt; <span class="number">10</span> &#123;</span><br><span class="line">  p.Unlock()</span><br><span class="line">  <span class="keyword">return</span> p.count</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p.count++</span><br><span class="line">newCount := p.count</span><br><span class="line">p.Unlock()</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> newCount</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当有多个 return 分支时，很容易遗忘 unlock</span></span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p.Lock()</span><br><span class="line"><span class="keyword">defer</span> p.Unlock()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> p.count &lt; <span class="number">10</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> p.count</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p.count++</span><br><span class="line"><span class="keyword">return</span> p.count</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更可读</span></span><br></pre></td></tr></table></figure>
+
+</td></tr>
+</tbody></table>
+
+<p>Defer 的开销非常小，只有在您可以证明函数执行时间处于纳秒级的程度时，才应避免这样做。使用 defer 提升可读性是值得的，因为使用它们的成本微不足道。尤其适用于那些不仅仅是简单内存访问的较大的方法，在这些方法中其他计算的资源消耗远超过 <code>defer</code>。</p>
+<h3 id="Channel-的-size-要么是-1，要么是无缓冲的"><a href="#Channel-的-size-要么是-1，要么是无缓冲的" class="headerlink" title="Channel 的 size 要么是 1，要么是无缓冲的"></a>Channel 的 size 要么是 1，要么是无缓冲的</h3><p>channel 通常 size 应为 1 或是无缓冲的。默认情况下，channel 是无缓冲的，其 size 为零。任何其他尺寸都必须经过严格的审查。考虑如何确定大小，是什么阻止了 channel 在负载下被填满并阻止写入，以及发生这种情况时发生了什么。</p>
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 应该足以满足任何情况！</span></span><br><span class="line">c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">64</span>)</span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大小：1</span></span><br><span class="line">c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">1</span>) <span class="comment">// 或者</span></span><br><span class="line"><span class="comment">// 无缓冲 channel，大小为 0</span></span><br><span class="line">c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br></pre></td></tr></table></figure>
+
+</td></tr>
+</tbody></table>
+
+<h3 id="枚举从-1-开始"><a href="#枚举从-1-开始" class="headerlink" title="枚举从 1 开始"></a>枚举从 1 开始</h3><p>在 Go 中引入枚举的标准方法是声明一个自定义类型和一个使用了 iota 的 const 组。由于变量的默认值为 0，因此通常应以非零值开头枚举。</p>
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Operation <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  Add Operation = <span class="literal">iota</span></span><br><span class="line">  Subtract</span><br><span class="line">  Multiply</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Add=0, Subtract=1, Multiply=2</span></span><br></pre></td></tr></table></figure>
+
+</td><td>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Operation <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  Add Operation = <span class="literal">iota</span> + <span class="number">1</span></span><br><span class="line">  Subtract</span><br><span class="line">  Multiply</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Add=1, Subtract=2, Multiply=3</span></span><br></pre></td></tr></table></figure>
+
+</td></tr>
+</tbody></table>
+
+<p>在某些情况下，使用零值是有意义的（枚举从零开始），例如，当零值是理想的默认行为时。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> LogOutput <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  LogToStdout LogOutput = <span class="literal">iota</span></span><br><span class="line">  LogToFile</span><br><span class="line">  LogToRemote</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// LogToStdout=0, LogToFile=1, LogToRemote=2</span></span><br></pre></td></tr></table></figure>
+
+<!-- TODO: section on String methods for enums -->
+
+<h3 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/16/Uber%E9%A3%8E%E6%A0%BCGo/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -523,12 +824,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
