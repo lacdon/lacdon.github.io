@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何编译个人博客</title>
+    <url>/2019/12/16/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>对源文件和部署的lacdon.github.io 做了一些研究。</p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>安装 <code>hexo</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载博客源码"><a href="#下载博客源码" class="headerlink" title="下载博客源码"></a>下载博客源码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/lacdon/hexo_blog_source.git</span><br><span class="line"><span class="built_in">cd</span> hexo_blog_source</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译部署hexo"><a href="#编译部署hexo" class="headerlink" title="编译部署hexo"></a>编译部署hexo</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d -g </span><br><span class="line"><span class="comment"># or </span></span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 想预览</span></span><br><span class="line">hexo server </span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">hexo s</span><br><span class="line"><span class="comment"># 访问 http://localhost:4000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><h3 id="1-配置git"><a href="#1-配置git" class="headerlink" title="1. 配置git"></a>1. 配置git</h3><p>在<code>_config.yaml</code>中设置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="number">117</span> <span class="comment"># Deployment</span></span><br><span class="line"><span class="number">118</span> <span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">119 deploy:</span></span><br><span class="line"><span class="attr">120   type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">121   repo:</span> <span class="string">https://lacdon@github.com/lacdon/lacdon.github.io.git</span></span><br><span class="line"><span class="attr">122   branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-如何写header"><a href="#2-如何写header" class="headerlink" title="2. 如何写header"></a>2. 如何写header</h3><p>在最开头</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">title: 文章标题</span><br><span class="line"></span><br><span class="line">date: yyyy-mm-dd hh:mm:ss 时间</span><br><span class="line"></span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">- </span>tag1</span><br><span class="line"><span class="bullet">- </span>tag2</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-文章写在哪儿"><a href="#3-文章写在哪儿" class="headerlink" title="3. 文章写在哪儿"></a>3. 文章写在哪儿</h3><p>可以放在 <code>hexo_blog_source/source/_posts</code>里面,具体创建方法:</p>
+<ul>
+<li>手动 <code>touch new_post.md</code> ,然后<code>vi</code>编辑</li>
+<li>使用命令 <code>hexo new post &lt;随便写点标题，也可以不写&gt;</code></li>
+</ul>
+<h3 id="4-怎么新建Page"><a href="#4-怎么新建Page" class="headerlink" title="4. 怎么新建Page"></a>4. 怎么新建Page</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page &lt;title&gt;</span><br><span class="line"><span class="comment"># 其中title是标题</span></span><br></pre></td></tr></table></figure>
+
+<p>这将存放在<code>hexo_blog_source/source/&lt;title&gt;</code>文件夹中</p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>Node.js</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Raven相关研究</title>
     <url>/2019/12/13/Raven%E7%9B%B8%E5%85%B3%E7%A0%94%E7%A9%B6/</url>
     <content><![CDATA[<h2 id="主要信息"><a href="#主要信息" class="headerlink" title="主要信息"></a>主要信息</h2><ol>
