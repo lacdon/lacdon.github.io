@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GRPC 使用TLS</title>
+    <url>/2019/12/24/GRPC%E4%BD%BF%E7%94%A8tls/</url>
+    <content><![CDATA[<h2 id="1-安装opnessl"><a href="#1-安装opnessl" class="headerlink" title="1. 安装opnessl"></a>1. 安装opnessl</h2><h2 id="2-生成私钥"><a href="#2-生成私钥" class="headerlink" title="2. 生成私钥"></a>2. 生成私钥</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openssl ecparam -genkey -name secp384r1 -out private.key</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-生成公钥"><a href="#3-生成公钥" class="headerlink" title="3. 生成公钥"></a>3. 生成公钥</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openssl req -new -x509 -sha256 -key private.key -out public.pem -days 3650</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-服务器"><a href="#4-服务器" class="headerlink" title="4. 服务器"></a>4. 服务器</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">   <span class="comment">// public 为public.pem 的全部内容</span></span><br><span class="line">   <span class="comment">// private 为private.key的全部内容</span></span><br><span class="line">   cert, err := tls.X509KeyPair([]<span class="keyword">byte</span>(public), []<span class="keyword">byte</span>(private))</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	<span class="built_in">panic</span>(err.Error())</span><br><span class="line">&#125;</span><br><span class="line">c := credentials.NewServerTLSFromCert(&amp;cert)</span><br><span class="line"></span><br><span class="line">server := grpc.NewServer(grpc.Creds(c))</span><br><span class="line">   impXXXService := ImpXXXService&#123;&#125;</span><br><span class="line">   </span><br><span class="line">XXX.RegisterXXXServer(server, &amp;impXXXService)</span><br><span class="line"></span><br><span class="line">lis, err := net.Listen(<span class="string">"tcp"</span>, <span class="string">":"</span>+ PORT)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	log.Fatalf(<span class="string">"net.Listen err: %v"</span>, err)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   server.Serve(lis)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-客户端"><a href="#5-客户端" class="headerlink" title="5. 客户端"></a>5. 客户端</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">   cp := x509.NewCertPool()</span><br><span class="line"><span class="keyword">if</span> !cp.AppendCertsFromPEM([]<span class="keyword">byte</span>(pem)) &#123;</span><br><span class="line">	<span class="built_in">panic</span>(<span class="string">"credentials: failed to append certificates"</span>)</span><br><span class="line">&#125;</span><br><span class="line">   tlsConfig := tls.Config&#123;ServerName: <span class="string">""</span>, RootCAs: cp&#125;</span><br><span class="line">   <span class="comment">// 注意要InsecureSkipVerify = true 不然要验证服务器名字</span></span><br><span class="line">tlsConfig.InsecureSkipVerify = <span class="literal">true</span></span><br><span class="line">tc := credentials.NewTLS(&amp;tlsConfig)</span><br><span class="line">conn, err := grpc.Dial(remoteConfigServer, grpc.WithTransportCredentials(tc))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	log.Fatalf(<span class="string">"grpc.Dial err: %v"</span>, err)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">defer</span> conn.Close()</span><br><span class="line"></span><br><span class="line">client := XXX.NewXXXClient(conn)</span><br><span class="line">resp, err := client.Get(context.Background(), &amp;XXX.XXXReq&#123;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	log.Fatalf(<span class="string">"client.Search err: %v"</span>, err)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>golang</tag>
+        <tag>grpc</tag>
+        <tag>protobuf</tag>
+        <tag>tls</tag>
+        <tag>ssl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Uber风格Go</title>
     <url>/2019/12/16/Uber%E9%A3%8E%E6%A0%BCGo/</url>
     <content><![CDATA[<!--
@@ -981,11 +1001,6 @@ fine. -->
 </ul>
 <!-- TODO: replace this with parameter structs and functional options, when to
 use one vs other -->]]></content>
-      <tags>
-        <tag>Go</tag>
-        <tag>Program</tag>
-        <tag>Language</tag>
-      </tags>
   </entry>
   <entry>
     <title>如何编译个人博客</title>
